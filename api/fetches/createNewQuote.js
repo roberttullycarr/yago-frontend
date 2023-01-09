@@ -3,7 +3,7 @@ import { createNewQuoteUrl } from "../apiUrls";
 
 export const createNewQuote = async (legalEntityID) => {
   const payload = {
-    legal_entity_id: legalEntityID
+    legal_entity_id: legalEntityID,
   }
 
   const url = createNewQuoteUrl();
