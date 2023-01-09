@@ -256,20 +256,20 @@ const StyledError = styled.p`
 
 const formValues = {
   user: {
-    firstName: "Robert",
-    lastName: "Carr",
-    phoneNumber: "320474028089",
-    email: "roberttullycarr@gmail.com",
-    addressOne: 'cuylitsstraat 53',
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    email: "",
+    addressOne: '',
     addressTwo: '',
-    addressCity: "antwerpen",
-    addressCountry: "belgium",
-    postCode: "2018",
+    addressCity: "",
+    addressCountry: "",
+    postCode: "",
   },
   legalEntity: {
-    enterpriseNumber: "234523452345",
-    legalName: "carr industries NV",
-    annualRevenue: "800000",
+    enterpriseNumber: "",
+    legalName: "",
+    annualRevenue: "",
     naturalPerson: false,
   },
   nacebelCodes: []
