@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react'
 import { createNewSession } from '../api/fetches/createNewSession';
+import Container from '../components/basic/Container';
 
 const Authenticate = () => {
   const router = useRouter();
@@ -23,7 +24,9 @@ const Authenticate = () => {
   }, [loginToken])
 
   return (
-    <div>login</div>
+    <Container>
+      <h1>logging in</h1>
+    </Container>
   )
 }
 
