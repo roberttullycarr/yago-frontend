@@ -10,8 +10,6 @@ const Quotes = () => {
   const router = useRouter();
   const legalEntityId = router.query.id;
 
-  console.log(quotes);
-
   const getQuotes = async () => {
     try {
       const legalEntityQuotes = await getLegalEntityQuotes(legalEntityId)
@@ -33,9 +31,18 @@ const Quotes = () => {
       <StyledGroupMembersGrid>
         {quotes && quotes.map((quote, index) => (
           <StyledGridChild key={index}>
-            <StyledEntityCard onClick={() => onCardClickHandler(quote.attributes.id)}>
+            <StyledEntityCard>
+              <h3 style={{margin: "0"}}>Quote info</h3>
               <h3>{quote.attributes.quoteID}</h3>
-                <span style={{fontWeight: "600"}}>{`Quote ID:`}&nbsp;</span><span>{quote.attributes.quoteId}</span>
+              <span style={{fontWeight: "600"}}>{`Quote ID:`}&nbsp;</span><span>{quote.attributes.quoteId}</span>
+              <h3>{quote.attributes.quoteID}</h3>
+              <span style={{fontWeight: "600"}}>{`Deductible:`}&nbsp;</span><span>${quote.attributes.deductible}</span>
+              <h3 style={{margin: "0"}}>Premiums</h3>
+              <span style={{fontWeight: "600"}}>{`After Delivery:`}&nbsp;</span><span>${quote.attributes.afterDeliveryPremium}</span>
+              <span style={{fontWeight: "600"}}>{`Entrusted Objects:`}&nbsp;</span><span>${quote.attributes.entrustedObjectsPremium}</span>
+              <span style={{fontWeight: "600"}}>{`Legal Expenses:`}&nbsp;</span><span>${quote.attributes.legalExpensesPremium}</span>
+              <span style={{fontWeight: "600"}}>{`Professional Indemnity:`}&nbsp;</span><span>${quote.attributes.professionalIndemityPremium}</span>
+              <span style={{fontWeight: "600"}}>{`Public Liability:`}&nbsp;</span><span>${quote.attributes.publicLiabilityPremium}</span>
             </StyledEntityCard>
           </StyledGridChild>
         ))}
@@ -65,8 +72,9 @@ const StyledGridChild = styled.div`
 
 const StyledEntityCard = styled.div`
   display: flex;
-  max-width: 20em;
-  height: 15em;
+  max-width: 22em;
+  height: auto;
+  padding: 1em;
   flex: 1;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -74,4 +82,14 @@ const StyledEntityCard = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+`
+
+const StyledDataSection = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 !important;
+  padding: 0 !important;
 `
