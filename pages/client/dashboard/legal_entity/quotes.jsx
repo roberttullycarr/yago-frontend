@@ -36,10 +36,8 @@ const Quotes = () => {
               <h3>{quote.attributes.quoteID}</h3>
               <span style={{fontWeight: "600"}}>{`Quote ID:`}&nbsp;</span><span>{quote.attributes.quoteId}</span>
               <h3>{quote.attributes.quoteID}</h3>
-              <span style={{fontWeight: "600"}}>{`Available:`}&nbsp;</span><span>${quote.attributes.available}</span>
+              <span style={{fontWeight: "600"}}>{`Available:`}&nbsp;</span><span>{quote.attributes.available ? "true" : "false"}</span>
               <span style={{fontWeight: "600"}}>{`Deductible:`}&nbsp;</span><span>${quote.attributes.deductible}</span>
-              <span style={{fontWeight: "600"}}>{`Deductible Formula:`}&nbsp;</span><span>${quote.attributes.deductibleFormula}</span>
-              <span style={{fontWeight: "600"}}>{`Coverage Ceiling Formula:`}&nbsp;</span><span>${quote.attributes.coverageCeilingFormula}</span>
               <span style={{fontWeight: "600"}}>{`Coverage Ceiling:`}&nbsp;</span><span>${quote.attributes.coverageCeiling}</span>
               <h3 style={{margin: "0"}}>Premiums</h3>
               <span style={{fontWeight: "600"}}>{`After Delivery:`}&nbsp;</span><span>${quote.attributes.afterDeliveryPremium}</span>
