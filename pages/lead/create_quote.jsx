@@ -16,6 +16,8 @@ const CreateQuote = () => {
   const [responseErrors, setResponseErrors] = useState([]);
   const router = useRouter();
 
+  console.log(process.env.NODE_ENV);
+
   const getNacebelCodes = async () => {
     const url = getNacebelCodesUrl();
     try {
