@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const baseURL =
-  process.env.NODE_ENV === "production" ? "https://fathomless-beach-09511.herokuapp.com" : "http://localhost:3000";
+  process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://fathomless-beach-09511.herokuapp.com";
 
 const yagoApi = axios.create({
   baseURL: baseURL,
